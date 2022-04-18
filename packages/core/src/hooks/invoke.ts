@@ -68,7 +68,13 @@ export interface UseStarknetInvoke<T extends unknown[]> {
   loading: boolean
   error?: string
   reset: () => void
-  invoke: ({ args }: { args: T }) => Promise<AddTransactionResponse | undefined>
+  invoke: ({
+    args,
+    opts,
+  }: {
+    args: T
+    opts?: Overrides
+  }) => Promise<AddTransactionResponse | undefined>
 }
 
 export function useStarknetInvoke<T extends unknown[]>({
@@ -85,7 +91,7 @@ export function useStarknetInvoke<T extends unknown[]>({
   }, [dispatch])
 
   const invoke = useCallback(
-    async ({ args, opts }: { args: T, opts?: Overrides }) => {
+    async ({ args, opts }: { args: T; opts?: Overrides }) => {
       if (contract && method && args) {
         try {
           dispatch({ type: 'start_invoke' })
