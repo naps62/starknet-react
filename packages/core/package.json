@@ -18,7 +18,7 @@
   "peerDependencies": {
     "@argent/get-starknet": "^3.0",
     "react": "^16.8 || ^17.0",
-    "starknet": "^3.5"
+    "starknet": "^3.9"
   },
   "dependencies": {
     "immutable": "^4.0.0"

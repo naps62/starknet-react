@@ -68,7 +68,13 @@ export interface UseStarknetInvoke<T extends unknown[]> {
   loading: boolean
   error?: string
   reset: () => void
-  invoke: ({ args }: { args: T }) => Promise<AddTransactionResponse | undefined>
+  invoke: ({
+    args,
+    opts,
+  }: {
+    args: T
+    opts?: Overrides
+  }) => Promise<AddTransactionResponse | undefined>
 }
 
 export function useStarknetInvoke<T extends unknown[]>({
