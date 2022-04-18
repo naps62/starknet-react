@@ -91,7 +91,7 @@ export function useStarknetInvoke<T extends unknown[]>({
   }, [dispatch])
 
   const invoke = useCallback(
-    async ({ args, opts }: { args: T; opts?: Overrides }) => {
+    async ({ args, opts }: { args: T, opts?: Overrides }) => {
       if (contract && method && args) {
         try {
           dispatch({ type: 'start_invoke' })
