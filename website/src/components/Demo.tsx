@@ -147,7 +147,9 @@ function DemoContractInvoke() {
         <p>Error: {error || 'No error'}</p>
       </div>
       <ActionRoot>
-        <Button onClick={() => invoke({ args: ['0x1'] })}>Invoke Method</Button>
+        <Button onClick={() => invoke({ args: ['0x1'], opts: { maxFee: 0 } })}>
+          Invoke Method
+        </Button>
         <Button onClick={() => reset()}>Reset State</Button>
       </ActionRoot>
     </Section>
